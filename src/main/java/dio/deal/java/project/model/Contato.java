@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 public class Contato {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long contact_id;
 	@Column(length = 100)
 	private String name;
 	private String mail;
@@ -32,10 +32,10 @@ public class Contato {
 	private List<Grupo> grupos;
 	
 	public Long getId() {
-		return id;
+		return contact_id;
 	}
 	public void setId(Long id) {
-		this.id = id;
+		this.contact_id = id;
 	}
 	public String getName() {
 		return name;

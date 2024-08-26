@@ -52,6 +52,9 @@ public class GrupoServiceImpl implements GrupoService {
 		contato.getGrupos().add(grupo);
 		grupo.addContato(contato);
 		
+		grupoRepository.save(grupo);
+		//contatoRepository.save(contato);
+		
 	}
 
 }

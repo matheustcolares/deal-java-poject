@@ -2,7 +2,8 @@ package dio.deal.java.project.model;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,19 +17,20 @@ public class Grupo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long group_id;
 	
 	private String name;
 	
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "grupos")
+	@ManyToMany( mappedBy = "grupos")
+	 @JsonIgnore
 	private List<Contato> contact_list;
 
 	public Long getId() {
-		return id;
+		return group_id;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.group_id = id;
 	}
 
 	public String getName() {
